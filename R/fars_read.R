@@ -14,15 +14,17 @@
 #' @seealso \code{\link{make_filename}}
 #'
 #' @examples
-#' \dontrun{accident <- fars_read('accident_2015.csv')}
+#' \dontrun{accident <- fars_read('accident_2015.csv.bz2')}
 #'
 #' @export
 #'
 fars_read <- function(filename) {
-  if(!file.exists(filename))
+  filedir <- system.file("extdata", filename, package = "Far")
+
+  if(!file.exists(filedir))
     stop("file '", filename, "' does not exist")
   data <- suppressMessages({
-    readr::read_csv(filename, progress = FALSE)
+    readr::read_csv(filedir, progress = FALSE)
   })
   dplyr::tbl_df(data)
 }

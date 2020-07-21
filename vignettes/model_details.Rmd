@@ -9,17 +9,12 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
+```{r setup, include = FALSE, cache = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
 ```
-
-```{r setup}
-library(Far)
-```
-
 # Description
 
 This imports and generates summary on fatal accidents based on data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System. Data source: [Fatality Analysis Reporting System (FARS)](https://www.nhtsa.gov/Data/Fatality-Analysis-Reporting-System-(FARS))
@@ -62,10 +57,6 @@ fars_read_years(2013:2015)
 ### Function `fars_summarize_years`
 This function returns the number of total fatal accident per month in 2013, 2014, 2015 respectively. It uses fars_read as ancillary functions.
 
-```{r}
-df_sum <- fars_summarize_years(2013:2015)
-df_sum
-```
 
 ### Function `fars_map_state`
 
