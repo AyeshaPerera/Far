@@ -1,0 +1,74 @@
+---
+title: "model_details"
+author: "Ayesha Perera"
+output: rmarkdown::html_vignette
+date: "`r Sys.Date()`"
+vignette: >
+  %\VignetteIndexEntry{model_details}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(Far)
+```
+
+# Description
+
+This imports and generates summary on fatal accidents based on data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System. Data source: [Fatality Analysis Reporting System (FARS)](https://www.nhtsa.gov/Data/Fatality-Analysis-Reporting-System-(FARS))
+
+## Load Packages
+```{r}
+library(Far)
+```
+
+## Load Data
+
+The package includes some datasets as follows
+```{r}
+list.files(system.file("extdata", package = "Far"))
+```
+
+## Package Functions
+
+### Function `make_filename`
+The `make_filename(year)` function accepts a numerical value such as 2013, 2014, 2015. It'll then output the concatenated file name as 'accident_year.csv.bz2', etc.
+```{r}
+make_filename(2013)
+```
+
+### Function `fars_read`
+Accepts a csv file and output it as a dataframe
+```{r}
+df_fars <- fars_read("accident_2015.csv.bz2")
+head(df_fars, 3)
+```
+
+### Function `fars_read_years`
+This function returns MONTH column of each year as a combined list. Input should be 2013, 2014, 2015, otherwise the function will generate an error message
+This function uses `make_file_name` and `fars_read` as ancillary functions.
+
+```{r}
+fars_read_years(2013:2015)
+```
+
+### Function `fars_summarize_years`
+This function returns the number of total fatal accident per month in 2013, 2014, 2015 respectively. It uses fars_read as ancillary functions.
+
+```{r}
+df_sum <- fars_summarize_years(2013:2015)
+df_sum
+```
+
+### Function `fars_map_state`
+
+```{r}
+fars_map_state(state.num = 30, year = 2013)
+```
