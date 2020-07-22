@@ -9,7 +9,7 @@ concatenating it as accident_year.csv.bz2}
 make_filename(year)
 }
 \arguments{
-\item{the}{year as a string value}
+\item{year}{year as a string value}
 }
 \value{
 returns the concatenated name with the year in the format

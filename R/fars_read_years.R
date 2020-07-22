@@ -17,6 +17,7 @@
 #' \dontrun{fars_read_years(2015)}
 #' \dontrun{fars_read_years(1999:2015)}
 #'
+
 fars_read_years <- function(years) {
   lapply(years, function(year) {
     file <- make_filename(year)

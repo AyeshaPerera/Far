@@ -10,7 +10,7 @@ Uses fars_read_years(years)}
 fars_summarize_years(years)
 }
 \arguments{
-\item{one}{or more years as a list}
+\item{years}{or more years as a list}
 }
 \value{
 a dataframe of counts by months and years

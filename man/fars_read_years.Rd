@@ -10,7 +10,7 @@ accident_year.csv.bz2 and produce the relevent dataset}
 fars_read_years(years)
 }
 \arguments{
-\item{one}{or more years as a list}
+\item{years}{or more years as a list}
 }
 \value{
 returns one or more datasets according to the number of years passed

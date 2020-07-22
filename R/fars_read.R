@@ -18,6 +18,7 @@
 #'
 #' @export
 #'
+utils::globalVariables(c("STATE","MONTH","year","n"))
 fars_read <- function(filename) {
   filedir <- system.file("extdata", filename, package = "Far")
 

@@ -10,7 +10,7 @@ does not exit error.}
 fars_read(filename)
 }
 \arguments{
-\item{a}{csv file that may or not exit in the given location.}
+\item{filename}{csv file that may or not exit in the given location.}
 }
 \value{
 returns a dataframe if the csv file exits if not returns a file doesnot exit
@@ -23,7 +23,7 @@ If such a file does not exit then it will produce an error with the file
 does not exit error.
 }
 \examples{
-\dontrun{accident <- fars_read('accident_2015.csv')}
+\dontrun{accident <- fars_read('accident_2015.csv.bz2')}
 
 }
 \seealso{

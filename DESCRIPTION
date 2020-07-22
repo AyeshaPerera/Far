@@ -1,10 +1,10 @@
 Package: Far
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
+Title: Based on Fatal Analysis Reporting System
+Version: 1.0.0
 Author: Ayesha Perera <gaayesha93@gmail.com>
 Maintainer: Ayesha Perera <gaayesha93@gmail.com>
-Description: Import, summarize and generate maps of accidents from 2013 to 2015
+Description: Import, summarize and generate maps of accidents from 2013 to 2015. Related to Fatal Analysis Reporting System.
 License: CC0
 Encoding: UTF-8
 LazyData: true
